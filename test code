@@ -1,0 +1,61 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+
+class TestFood {
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void caloriesTest1()
+	{
+	foodCalorie calories = new foodCalorie ();
+	assertEquals(false, calories.CheckCalories(610));
+	}
+
+	@Test
+	public void priceTest()
+	{
+	foodPrice prices = new foodPrice();
+	asserEquals(true, prices.CheckPrices(129));
+	}
+
+	@Test
+	public void TestFoodName()
+	{
+	FoodNameChartacter foodName = new FoodNameChartacter();
+	assertEquals(true, foodName.CheckFoodName("strawberry"));
+	}
+
+	@Test
+	public void caloriesTest()
+	{
+	foodCalorie calories = new foodCalories ();
+	assertEquals(false, calories.CheckCalories(1600));
+	}
+
+	@Test
+	public void increaseTest1()
+	{ 
+	Food foodTypeDate = new Food ("Kid Food");
+	Food foodCalorieDate = new Food (900);
+
+	assertAll("",()->assertEquals(true,foodTypeDate.UpdateFood()), 
+	"",()->assertEquals(true,foodCalorieDate.UpdateFood()));
+	}
+
+	@Test
+	public void increaseTest()
+	{ 
+	Food foodTypeDate = new Food ("Adult Food");
+	Food foodCalorieDate = new Food (1800);
+	assertAll("",()->assertEquals(false,foodTypeDate.UpdateFood()), 
+	"",()->assertEquals(false,foodCalorieDate.UpdateFood()));
+	}
+
+
+}
